@@ -11,6 +11,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(gtest_disable_pthreads on)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Test REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Test REQUIRED)
 
@@ -36,6 +39,8 @@ include(FetchContent)
     2e1ff6c30cc3591e5.zip
 )
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+FetchContent_MakeAvailable(googletest)
+enable_testing()
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Search_engine
