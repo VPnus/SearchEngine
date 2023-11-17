@@ -1,0 +1,4 @@
+#ifndef INVERTED_INDEX_H
+#define INVERTED_INDEX_H
+
+#endif // INVERTED_INDEX_H
