@@ -11,36 +11,44 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(gtest_disable_pthreads on)
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Test REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Test REQUIRED)
 
 set(PROJECT_SOURCES
-        main.cpp
+        src/main.cpp
         mainwindow.cpp
-        converter.cpp
-        inverted_index.cpp
-        server.cpp
-        server.h
-        inverted_index.h
-        converter.h
+        src/converter.cpp
+        src/inverted_index.cpp
+        src/server.cpp
+        include/server.h
+        include/inverted_index.h
+        include/converter.h
         mainwindow.h
         mainwindow.ui
+        tests/index_tests.cpp
+        tests/server_tests.cpp
+        resources/file001.txt
+        resources/file002.txt
+        resources/file003.txt
+        resources/file004.txt
+        config/answers.json
+        config/requests.json
+        config/config.json
 
 )
 
+
+
 include(FetchContent)
-    FetchContent_Declare(
-    googletest
-    URL
-    https://github.com/google/googletest/archive/609281088cfefc76f9d0ce8
-    2e1ff6c30cc3591e5.zip
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/release-1.11.0.tar.gz
 )
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 FetchContent_MakeAvailable(googletest)
-enable_testing()
+
+
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Search_engine
@@ -67,7 +75,9 @@ endif()
 
 
 
-target_link_libraries(Search_engine PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Test)
+TARGET_LINK_LIBRARIES(Search_engine PRIVATE gtest_main)
+
+target_link_libraries(Search_engine PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 set_target_properties(Search_engine PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
