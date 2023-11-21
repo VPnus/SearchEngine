@@ -1,5 +1,5 @@
-/*#include <gtest/gtest.h>
-
+#include <gtest/gtest.h>
+#include "include/inverted_index.h"
 
 using namespace std;
 
@@ -66,4 +66,4 @@ TEST(TestCaseInvertedIndex, TestInvertedIndexMissingWord) {
     };
     TestInvertedIndexFunctionality(docs, requests, expected);
 }
-*/
+

@@ -1,24 +1,36 @@
 #ifndef CONVERTER_H
 #define CONVERTER_H
 #pragma once
-#include <QFile>
 #include <QJsonDocument>
+#include <QFile>
 #include <QJsonObject>
-#include <QDebug>
+#include <QJsonArray>
+#include <vector>
 
-
-
-class JsonManager {
+class ConverterJSON {
 public:
-
-    //Чтение файла конфигурации JSON
-    QJsonObject readConfig();
-
-    //Чтение файла с запросами JSON
-    QJsonObject readRequest();
-
-    //Запись в файл с ответами на запросы JSON
-    void writeResponse(QJsonObject responseObject);
+    ConverterJSON() = default;
+/**
+* Метод получения содержимого файлов
+* @return Возвращает список с содержимым файлов перечисленных
+* в config.json
+*/
+    std::vector<std::string> GetTextDocuments();
+/**
+* Метод считывает поле max_responses для определения предельного
+* количества ответов на один запрос
+* @return
+*/
+    int GetResponsesLimit();
+/**
+* Метод получения запросов из файла requests.json
+* @return возвращает список запросов из файла requests.json
+*/
+    std::vector<std::string> GetRequests();
+/**
+* Положить в файл answers.json результаты поисковых запросов
+*/
+    void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers);
 };
 
 #endif // CONVERTER_H

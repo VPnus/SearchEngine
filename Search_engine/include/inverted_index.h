@@ -1,8 +1,10 @@
 #ifndef INVERTED_INDEX_H
 #define INVERTED_INDEX_H
+#pragma once
 #include <iostream>
 #include <vector>
 #include <map>
+
 
 
 struct Entry {

@@ -1,7 +1,8 @@
 #include "include/inverted_index.h"
 
 
-//Обновление базы документов
+// Обновить или заполнить базу документов, по которой будем совершать поиск
+
 void InvertedIndex::UpdateDocumentBase(std::vector<std::string> documents)
 {
       docs = documents;
@@ -30,5 +31,21 @@ void InvertedIndex::UpdateDocumentBase(std::vector<std::string> documents)
        }
 }
 
+//Метод определяет количество вхождений слова word в загруженной базе документов
+std::vector<Entry> InvertedIndex::GetWordCount(const std::string& word)
+{
+        std::vector<Entry> wordCountList;
+       for (size_t i = 0; i < docs.size(); i++) {
+           size_t count = 0;
+           size_t pos = 0;
+           const std::string& document = docs[i];
+           while ((pos = document.find(word, pos)) != std::string::npos) {
+               pos += word.length();
+               count++;
+           }
+           wordCountList.push_back({i, count});
+       }
+       return wordCountList;
+}
 
 

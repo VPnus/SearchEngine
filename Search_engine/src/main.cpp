@@ -1,4 +1,8 @@
 #include "mainwindow.h"
+#include "include/converter.h"
+#include "include/inverted_index.h"
+#include "include/server.h"
+#include <iostream>
 #include <QApplication>
 
 
