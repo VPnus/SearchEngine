@@ -1,6 +1,7 @@
 #ifndef INVERTED_INDEX_H
 #define INVERTED_INDEX_H
 #pragma once
+#include "converter.h"
 #include <iostream>
 #include <vector>
 #include <map>

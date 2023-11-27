@@ -21,6 +21,7 @@ InvertedIndex,
 запросе
 */
     SearchServer(InvertedIndex& idx) : _index(idx){ };
+
 /**
 * Метод обработки поисковых запросов
 * @param queries_input поисковые запросы взятые из файла
