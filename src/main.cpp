@@ -26,7 +26,6 @@ int main(int argc, char** argv)
 
             ConverterJSON converter;
             while (true) {
-                std::this_thread::sleep_for(std::chrono::seconds(converter.GetTimeUpdate()));
 
                 std::vector<std::string> listTextBlocks = converter.GetTextDocuments();
                 std::vector<std::string> listRequests = converter.GetRequests();
