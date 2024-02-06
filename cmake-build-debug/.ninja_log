@@ -1,6 +1,0 @@
-# ninja log v5
-10	1363	7278763514752846	CMakeFiles/SkillDiplom.dir/src/searchserver.cpp.obj	8c13b16246e45ec8
-0	1443	7278763515562943	CMakeFiles/SkillDiplom.dir/src/invertedindex.cpp.obj	b1ad083e9c8db6c0
-5	4298	7278763544078405	CMakeFiles/SkillDiplom.dir/src/converterjson.cpp.obj	19ca3faed2cde406
-16	4360	7278763544659656	CMakeFiles/SkillDiplom.dir/src/main.cpp.obj	e5b24aca6ce10700
-4360	6676	7278763567817627	C:/Users/AMOSE/Downloads/SkillDiplom-master(1)/SkillDiplom-master/bin/SkillDiplom.exe	e04f16aa1d5ef3ab

@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/AMOSE/Downloads/SkillDiplom-master(1)/SkillDiplom-master/cmake-build-debug/tests[1]_tests.cmake")
-  include("C:/Users/AMOSE/Downloads/SkillDiplom-master(1)/SkillDiplom-master/cmake-build-debug/tests[1]_tests.cmake")
-else()
-  add_test(tests_NOT_BUILT tests_NOT_BUILT)
-endif()
