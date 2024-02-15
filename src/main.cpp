@@ -33,6 +33,7 @@ int main(int argc, char** argv)
                 idx.UpdateDocumentBase(listTextBlocks);
                 SearchServer server(idx);
                 converter.putAnswers(server.search(listRequests));
+                break;
             }
         }
     }
